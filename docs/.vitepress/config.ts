@@ -7,6 +7,7 @@ export default defineConfig({
   description: "Trinitytime blog",
   themeConfig: {
     siteTitle: 'Trinitytime',
+    
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
