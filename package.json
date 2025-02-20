@@ -1,0 +1,14 @@
+{
+  "name": "trinitytime",
+  "type": "module",
+  "dependencies": {},
+  "devDependencies": {
+    "vitepress": "^1.6.3"
+  },
+  "scripts": {
+    "dev": "npm run docs:dev docs",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview"
+  }
+}
