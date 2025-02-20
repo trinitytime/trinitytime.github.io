@@ -32,12 +32,19 @@ jobs:
       # - uses: pnpm/action-setup@v3 # pnpm을 사용하는 경우 주석 해제
       #   with:
       #     version: 9
-      - uses: oven-sh/setup-bun@v1 # Bun을 사용하는 경우 주석 해제
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - uses: oven-sh/setup-bun@v2 # Bun을 사용하는 경우 주석 해제
         with:
-          node-version: 22
-          cache: npm # 또는 pnpm / yarn
+          bun-version: latest
+      - uses: actions/cache@v4
+        with:
+          path: ~/.bun/install/cache
+          key: bun-cache
+          restore-keys: bun-cache
+      # - name: Setup Node
+        # uses: actions/setup-node@v4
+        # with:
+        #   node-version: 22
+        #   cache: npm # 또는 pnpm / yarn
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Install dependencies
