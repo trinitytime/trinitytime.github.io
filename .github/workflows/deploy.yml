@@ -36,10 +36,9 @@ jobs:
           repository: trinitytime/blog
           path: blog
 
-      - run:  ls -la
-      - run:  ls -la blog
+      - run:  rm -rf blog/.git
       - name: copy blog
-        run:  mv -r -f blog/**/* docs/
+        run:  cp -rf blog/**/* docs/
 
       # - uses: pnpm/action-setup@v3 # pnpm을 사용하는 경우 주석 해제
       #   with:
