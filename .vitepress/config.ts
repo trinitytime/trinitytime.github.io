@@ -2,9 +2,11 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  lang: 'ko-KR',
   title: "Trinitytime",
   description: "Trinitytime blog",
   themeConfig: {
+    siteTitle: 'Trinitytime',
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
