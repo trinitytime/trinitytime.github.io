@@ -27,7 +27,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # lastUpdated가 활성화되지 않은 경우 필요하지 않음
+          # fetch-depth: 0 # lastUpdated가 활성화되지 않은 경우 필요하지 않음
           submodules: recursive
           
       - name: Checkout docs
@@ -35,7 +35,8 @@ jobs:
         with:
           repository: trinitytime/blog
           path: blog
-       
+
+      - run:  ls -la
       - name: copy blog
         run:  mv -f blog/**/* docs/
 
