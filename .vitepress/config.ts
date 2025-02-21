@@ -1,11 +1,15 @@
 import { defineConfig } from 'vitepress'
 
+
+const srcDir = process.env.NODE_ENV === 'development' ? 'sample': 'blog'
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   lang: 'ko-KR',
   title: "Trinitytime",
   description: "Trinitytime blog",
   cleanUrls: true,
+  srcDir,
   themeConfig: {
     siteTitle: 'Trinitytime',
     
