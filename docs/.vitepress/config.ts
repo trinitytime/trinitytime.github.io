@@ -5,6 +5,7 @@ export default defineConfig({
   lang: 'ko-KR',
   title: "Trinitytime",
   description: "Trinitytime blog",
+  cleanUrls: true,
   themeConfig: {
     siteTitle: 'Trinitytime',
     
