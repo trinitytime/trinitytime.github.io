@@ -137,3 +137,19 @@
   --docsearch-primary-color: var(--vp-c-brand-1) !important;
 }
 
+/**
+ * Section
+ * -------------------------------------------------------------------------- */
+.vp-doc .section {
+  border: 1px solid var(--vp-c-gray-2);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+} 
+
+.vp-doc .section h2 {
+  margin: 0 0 1.5rem 0;
+  padding: 0;
+  border-top: 0;
+  border-bottom: 1px solid var(--vp-button-brand-active-bg);
+
+} 

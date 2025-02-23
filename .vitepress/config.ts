@@ -4,6 +4,8 @@ import { createLogger } from 'vite'
 import matter from 'gray-matter'
 import path from 'node:path'
 import _ from 'lodash'
+import { fileURLToPath } from 'node:url'
+import {sectionPlugin} from '../lib/markdown/section'
 
 const srcDir = process.env.NODE_ENV === 'development' ? 'sample': 'blog'
 
@@ -35,6 +37,12 @@ const config: UserConfig<DefaultTheme.Config> = {
     socialLinks: [
       { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
     ]
+  },
+  markdown: {
+    config: (md) => {
+      // 더 많은 markdown-it 플러그인을 사용!
+      md.use(sectionPlugin)
+    }
   }
 }
 
@@ -52,7 +60,7 @@ const result = _.chain(pages).map(page => {
   const parts = page.split('/')
   const level = parts.length
   const category = 1 !== level ? parts[0] : 'nav'
-  const text = parts[parts.length - 1].replace(/\.md$/, '')
+  const text = parts[parts.length - 1].replace(/_/g, ' ').replace(/\.md$/, '')
   const link = `/${page.replace(/\.md$/, '')}`
 
 
