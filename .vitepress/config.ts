@@ -60,12 +60,15 @@ const result = _.chain(pages).map(page => {
   const parts = page.split('/')
   const level = parts.length
   const category = 1 !== level ? parts[0] : 'nav'
-  const text = parts[parts.length - 1].replace(/_/g, ' ').replace(/\.md$/, '')
+  let text = parts[parts.length - 1].replace(/_/g, ' ').replace(/\.md$/, '')
   const link = `/${page.replace(/\.md$/, '')}`
 
+  if (1 === level && 'index' === text) {
+    return null
+  }
 
   if ('index' === text) {
-    return null
+    text = parts[parts.length - 2]
   }
 
   return {
