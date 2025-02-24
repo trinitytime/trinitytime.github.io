@@ -68,7 +68,7 @@ const result = _.chain(pages).map(page => {
   }
 
   if ('index' === text) {
-    text = parts[parts.length - 2]
+    text = parts[parts.length - 2].replace(/_/g, ' ')
   }
 
   return {
