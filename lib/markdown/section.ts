@@ -4,7 +4,6 @@ interface SectionOptions {
   className?: string
 }
 
-
 export const sectionPlugin = (md: MarkdownIt, options: SectionOptions = {}) => {
   const className = options.className || 'section'
   const fence = md.renderer.rules.fence!
@@ -14,7 +13,6 @@ export const sectionPlugin = (md: MarkdownIt, options: SectionOptions = {}) => {
   
   md.renderer.rules.hr = (tokens, idx, options, env, self) => {
     const marp = true === env.frontmatter?.marp
-    console.log(env.frontmatter)
     if (marp) {
       return `</div><div class="${className}">`
     }
